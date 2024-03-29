@@ -1,0 +1,14 @@
+<h1>Kittens</h1>
+
+<table>
+  <tbody>
+    <% @kittens.each do |kitten| %>
+      <tr>
+        <td> 
+            <%= link_to kitten.name, kitten_path(kitten)%> 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= button_to 'New Kitten', new_kitten_path, method: :get %>

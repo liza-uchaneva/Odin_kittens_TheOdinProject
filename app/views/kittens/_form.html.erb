@@ -1,0 +1,30 @@
+<%= link_to "Back to home Page", root_path %><br><br>
+
+<%=form_with model: @kitten do |form|%>
+    <% if @kitten.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@kitten.errors.count, "error") %> prohibited this kitten from being saved:</h2>
+
+            <ul>
+                <% @kitten.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div>
+    <%= form.label :name, "Kitten name:"%>
+    <%= form.text_field :name %><br><br>
+
+    <%= form.label :age, "Age:"%>
+    <%= form.number_field :age, min: 0 %><br><br>
+
+    <%= form.label :softness, "Softness:"%>
+    <%= form.text_field :softness %><br><br>
+
+    <%= form.label :cuteness, "Cuteness:"%>
+    <%= form.text_field :cuteness %><br><br>
+
+    <%= form.submit %>
+    </div>
+<%end%>

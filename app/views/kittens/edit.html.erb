@@ -1,0 +1,7 @@
+<h1>Edit <%= @kitten.name %></h1>
+
+<%= render "form" %>
+
+<%= form_with(model: @kitten, url: kitten_path(@kitten), method: :delete) do |form| %>
+  <%= form.submit "Delete"%>
+<% end %>
