@@ -1,24 +1,27 @@
-# README
+# Odin Kittens
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small RESTful Rails app for managing kittens, which also serves its data as a JSON API. Part of the [The Odin Project](https://www.theodinproject.com/) Rails curriculum.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Full CRUD for kittens (name, age, cuteness, softness) with validations
+- Flash messages for successful and failed actions
+- The same controller actions respond with **HTML or JSON** (`/kittens.json`, `/kittens/1.json`) via `respond_to`
 
-* System dependencies
+## Tech stack
 
-* Configuration
+Ruby on Rails 7.1 · SQLite · Hotwire · Importmap
 
-* Database creation
+## Running locally
 
-* Database initialization
+Requires Ruby 3.2.2.
 
-* How to run the test suite
+```bash
+bundle install
+bin/rails db:setup
+bin/rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Then open http://localhost:3000.
 
-* Deployment instructions
-
-* ...
+Try the API: `curl http://localhost:3000/kittens.json`
